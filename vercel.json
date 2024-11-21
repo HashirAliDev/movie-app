@@ -24,9 +24,10 @@
     }
   ],
   "framework": "vite",
-  "outputDirectory": "client-new/dist",
-  "buildCommand": "cd client-new && npm install && npm run build",
-  "installCommand": "cd client-new && npm install",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/(.*)",
