@@ -23,13 +23,14 @@
       "dest": "/client-new/manifest.json"
     }
   ],
+  "framework": "vite",
+  "outputDirectory": "client-new/dist",
+  "buildCommand": "cd client-new && npm install && npm run build",
+  "installCommand": "cd client-new && npm install",
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ],
-  "buildCommand": "cd client-new && npm install && npm run build",
-  "outputDirectory": "client-new/dist",
-  "framework": "vite"
+  ]
 }
