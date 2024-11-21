@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "client-new/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/client-new/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/client-new/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/client-new/manifest.json"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "buildCommand": "cd client-new && npm install && npm run build",
+  "outputDirectory": "client-new/dist",
+  "framework": "vite"
+}
